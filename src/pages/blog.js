@@ -5,7 +5,13 @@ import Page from "../components/Page";
 const Blog = () => {
   return (
     <PageLayout>
-      <Page>This is blog page.</Page>
+      <Page>
+        <div>Blog 1</div>
+
+        <div>Blog 2</div>
+
+        <div>Blog 3</div>
+      </Page>
     </PageLayout>
   );
 };

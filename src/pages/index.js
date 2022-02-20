@@ -9,6 +9,9 @@ const IndexPage = () => {
         <h2>Hi, This is Daniel Kim.</h2>
         <p>And this is my blog.</p>
         <p>I am a software engineer, and a human.</p>
+        <p>
+          Welcome. It's better for both of us to know each other from now on.
+        </p>
       </Page>
     </PageLayout>
   );

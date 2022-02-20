@@ -5,7 +5,11 @@ import Page from "../components/Page";
 const Portfolio = () => {
   return (
     <PageLayout>
-      <Page>This is portfolio page</Page>
+      <Page>
+        <p>NFT Marketplace.</p>
+        <p>Some ICOs.</p>
+        <p>Some DApps.</p>
+      </Page>
     </PageLayout>
   );
 };
