@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import colors from "../styles/colors";
 
 const Navigation = () => {
   return (
@@ -29,7 +30,7 @@ export default Navigation;
 
 const Container = styled.nav`
   height: 80px;
-  background: gray;
+  background-color: ${colors.pink0};
 
   display: flex;
   justify-content: space-between;

@@ -17,6 +17,9 @@ const PageLayout = ({ children }) => {
           html,
           body {
             height: 100%;
+          }
+
+          * {
             box-sizing: border-box;
           }
         `}
