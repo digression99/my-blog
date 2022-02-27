@@ -2,10 +2,8 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import PageLayout from "../components/PageLayout";
 import Page from "../components/Page";
-import { PostListQuery } from "../queries";
 
 const Blog = ({ data }) => {
-  console.log("blog data :", data);
   const { edges: posts } = data.allMarkdownRemark;
 
   return (

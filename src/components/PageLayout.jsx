@@ -1,41 +1,74 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Global, css } from "@emotion/react";
-import Navigation from "./Navigation";
+import GlobalStyles from "../styles/GlobalStyles";
+import { Global } from "@emotion/react";
 
-const PageLayout = ({ children }) => {
+const Navigation = () => {
   return (
-    <Wrapper>
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
+    <NavigationWrapper>
+      <h5>Daniel Kim</h5>
 
-      <Global
-        styles={css`
-          html,
-          body {
-            height: 100%;
-          }
-
-          * {
-            box-sizing: border-box;
-          }
-        `}
-      />
-    </Wrapper>
+      <NavItemList>
+        <li>Heading1</li>
+        <li>Heading2</li>
+        <li>Heading3</li>
+      </NavItemList>
+    </NavigationWrapper>
   );
 };
 
+function PageLayout({ children }) {
+  return (
+    <PageWrapper>
+      <Navigation />
+      {children}
+
+      <Global styles={GlobalStyles} />
+
+      <Footer>This is footer</Footer>
+    </PageWrapper>
+  );
+}
+
 export default PageLayout;
 
-const Wrapper = styled.div`
+const PageWrapper = styled.div``;
+
+const NavigationWrapper = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+  padding: 0 5%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  z-index: 1;
 `;
 
-const Container = styled.main`
-  min-width: 320px;
-  // max-width: 768px;
-  width: 100%;
+const NavItemList = styled.ul`
+  list-style: none;
+  display: flex;
+
+  > * + * {
+    margin-left: 48px;
+  }
+`;
+
+const Footer = styled.footer`
+  height: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
 `;
