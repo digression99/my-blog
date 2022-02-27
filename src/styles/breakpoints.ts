@@ -1,7 +1,7 @@
-const maxWidth = "1440px";
-const desktopWidth = "1024px";
-const tabletWidth = "768px";
-const mobileWidth = "320px";
+const maxWidth = 1440;
+const desktopWidth = 1024;
+const tabletWidth = 768;
+const mobileWidth = 320;
 
 const breakpoints = {
   max: maxWidth,

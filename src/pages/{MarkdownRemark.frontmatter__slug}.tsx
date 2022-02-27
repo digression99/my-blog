@@ -3,6 +3,7 @@ import PageLayout from "../components/PageLayout";
 import { graphql, PageProps } from "gatsby";
 import Markdown from "../components/Markdown";
 import Image from "gatsby-image";
+import TwitterShareButton from "../components/TwitterShareButton";
 
 interface DataProps {
   markdownRemark: {
@@ -29,6 +30,10 @@ const Template = ({ data }: PageProps<DataProps>) => {
       <h3>{frontmatter.title}</h3>
       <span>{frontmatter.date}</span>
       <Markdown html={html} />
+
+      <div>
+        <TwitterShareButton url={"https://abc.com"} />
+      </div>
     </PageLayout>
   );
 };

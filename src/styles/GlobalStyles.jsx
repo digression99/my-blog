@@ -9,7 +9,6 @@ const GlobalStyles = css`
   *::before {
     box-sizing: border-box;
   }
-
   p {
     margin-bottom: 1rem;
   }
@@ -20,37 +19,38 @@ const GlobalStyles = css`
   h4,
   h5 {
     margin: 3rem 0 1.38rem;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     line-height: 1.3;
   }
 
   h1 {
     margin-top: 0;
-    font-size: 7.594rem;
+    font-size: 5.653rem;
   }
 
   h2 {
-    font-size: 5.063rem;
+    font-size: 3.998rem;
   }
 
   h3 {
-    font-size: 3.375rem;
+    font-size: 2.827rem;
   }
 
   h4 {
-    font-size: 2.25rem;
+    font-size: 1.999rem;
   }
 
   h5 {
-    font-size: 1.5rem;
+    font-size: 1.414rem;
   }
 
   small,
   .text_small {
-    font-size: 0.667rem;
+    font-size: 0.707rem;
   }
 
-  @media only screen and (max-width: ${breakpoints.tablet}) {
+  @media only screen and (max-width: ${breakpoints.tablet}px) {
     html {
       font-size: 80%;
     }

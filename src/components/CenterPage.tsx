@@ -1,8 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 import breakpoints from "../styles/breakpoints";
 
-function CenterPage({ children }) {
+interface Props {
+  children: ReactNode;
+}
+
+function CenterPage({ children }: Props) {
   return (
     <Container>
       <Main>{children}</Main>
@@ -21,6 +25,6 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  min-width: ${breakpoints.mobile};
-  max-width: ${breakpoints.tablet};
+  min-width: ${breakpoints.mobile}px;
+  max-width: ${breakpoints.tablet}px;
 `;

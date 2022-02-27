@@ -1,12 +1,25 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 import GlobalStyles from "../styles/GlobalStyles";
+import Helmet from "react-helmet";
 import { Global } from "@emotion/react";
 import Navigation from "./Navigation";
+import { withPrefix } from "gatsby";
 
-function PageLayout({ children }) {
+interface Props {
+  children: ReactNode;
+}
+
+function PageLayout({ children }: Props) {
   return (
     <PageWrapper>
+      <Helmet>
+        <script
+          src={withPrefix("twitter-widgets.js")}
+          async
+          type="text/javascript"
+        />
+      </Helmet>
       <Navigation />
       {children}
 

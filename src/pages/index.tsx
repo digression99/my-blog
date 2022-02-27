@@ -100,7 +100,7 @@ const Main = styled.main`
   min-height: calc(100vh - 80px);
   background: gainsboro;
 
-  @media only screen and (max-width: ${breakpoints.desktop}) {
+  @media only screen and (max-width: ${breakpoints.desktop}px) {
     & {
       flex-direction: column;
       padding-top: 0;
@@ -120,7 +120,7 @@ const MainLeft = styled.div`
     margin-top: 48px;
   }
 
-  @media only screen and (max-width: ${breakpoints.desktop}) {
+  @media only screen and (max-width: ${breakpoints.desktop}px) {
     & {
       margin-left: 0;
     }

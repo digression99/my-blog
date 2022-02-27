@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Post } from "../types";
 
-function PostList({ posts }) {
+interface Props {
+  posts: {
+    node: Post;
+  }[];
+}
+
+function PostList({ posts }: Props) {
   return posts
     .filter((post) => post.node.frontmatter.title.length > 0)
     .map(({ node: post }) => {
