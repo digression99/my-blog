@@ -1,10 +1,10 @@
 import React from "react";
+import normalizeCss from "normalize.css";
 import { css } from "@emotion/react";
+import breakpoints from "./breakpoints";
 
 const GlobalStyles = css`
-  html {
-    font-size: 100%;
-  }
+  ${normalizeCss}
 
   *,
   *::after,
@@ -50,6 +50,12 @@ const GlobalStyles = css`
   small,
   .text_small {
     font-size: 0.667rem;
+  }
+
+  @media only screen and (max-width: ${breakpoints.tablet}) {
+    html {
+      font-size: 80%;
+    }
   }
 `;
 

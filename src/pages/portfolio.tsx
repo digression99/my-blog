@@ -1,7 +1,6 @@
 import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import CenterPage from "../components/CenterPage";
-import Page from "../components/Page";
 
 const Portfolio = () => {
   return (

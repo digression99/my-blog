@@ -1,17 +1,47 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { StaticImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import PostList from "../components/PostList";
 import PageLayout from "../components/PageLayout";
+import breakpoints from "../styles/breakpoints";
 
-const IndexPage = ({ data }) => {
+interface DataProps {
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        excerpt: string;
+        id: string;
+        frontmatter: {
+          title: string;
+          date: string;
+          slug: string;
+          tags: string[];
+          excerpt: string;
+        };
+      };
+    };
+  };
+}
+
+const IndexPage = ({ data }: PageProps<DataProps>) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <>
       <PageLayout>
         <Main>
+          <MainRight>
+            <StaticImage
+              src="../images/my-pic-test.jpeg"
+              alt="my pic test"
+              placeholder="blurred"
+              layout="fixed"
+              width={500}
+              height={600}
+            />
+          </MainRight>
+
           <MainLeft>
             <h1>Daniel Kim's Personal Blog</h1>
 
@@ -27,17 +57,6 @@ const IndexPage = ({ data }) => {
               blablabl
             </p>
           </MainLeft>
-
-          <MainRight>
-            <StaticImage
-              src="../images/my-pic-test.jpeg"
-              alt="my pic test"
-              placeholder="placeholder test"
-              layout="constrained"
-              width={500}
-              height={600}
-            />
-          </MainRight>
         </Main>
 
         <RecentPosts>
@@ -78,10 +97,15 @@ const Main = styled.main`
   align-items: center;
 
   padding: 5%;
-
-  height: calc(100vh - 80px);
-
+  min-height: calc(100vh - 80px);
   background: gainsboro;
+
+  @media only screen and (max-width: ${breakpoints.desktop}) {
+    & {
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
 `;
 
 const MainLeft = styled.div`
@@ -89,10 +113,17 @@ const MainLeft = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  margin-left: 24px;
   max-width: 600px;
 
   small {
     margin-top: 48px;
+  }
+
+  @media only screen and (max-width: ${breakpoints.desktop}) {
+    & {
+      margin-left: 0;
+    }
   }
 `;
 

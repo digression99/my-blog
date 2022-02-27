@@ -1,5 +1,4 @@
 import React from "react";
-import Page from "../components/Page";
 import PageLayout from "../components/PageLayout";
 import { graphql } from "gatsby";
 
@@ -9,11 +8,9 @@ const Template = ({ data }) => {
 
   return (
     <PageLayout>
-      <Page>
-        <h1> {frontmatter.title} </h1>
-        <h2> {frontmatter.date} </h2>
-        <div dangerouslySetInnerHTML={{ __html: html }}></div>
-      </Page>
+      <h1> {frontmatter.title} </h1>
+      <h2> {frontmatter.date} </h2>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </PageLayout>
   );
 };

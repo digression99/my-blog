@@ -1,30 +1,34 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import PageLayout from "../components/PageLayout";
+import PostList from "../components/PostList";
 import CenterPage from "../components/CenterPage";
 
-const Blog = ({ data }) => {
+interface DataProps {
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        excerpt: string;
+        id: string;
+        frontmatter: {
+          title: string;
+          date: string;
+          slug: string;
+          tags: string[];
+          excerpt: string;
+        };
+      };
+    };
+  };
+}
+
+const Blog = ({ data }: PageProps<DataProps>) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <PageLayout>
       <CenterPage>
-        {posts
-          .filter((post) => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => {
-            return (
-              <div key={post.id}>
-                <h3>
-                  <Link to={post.frontmatter.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                </h3>
-                <h4>{post.frontmatter.date}</h4>
-
-                <p>{post.excerpt}</p>
-              </div>
-            );
-          })}
+        <PostList posts={posts} />
       </CenterPage>
     </PageLayout>
   );

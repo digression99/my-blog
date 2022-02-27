@@ -1,7 +1,6 @@
 import * as React from "react";
 import { css } from "@emotion/react";
 import PageLayout from "../components/PageLayout";
-import Page from "../components/Page";
 import CenterPage from "../components/CenterPage";
 
 const About = () => {
