@@ -12,7 +12,7 @@ interface DataProps {
       date: string;
       slug: string;
       title: string;
-      featuredImage: any;
+      featuredImage?: any;
     };
   };
 }
@@ -21,7 +21,7 @@ const Template = ({ data }: PageProps<DataProps>) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
-  const featuredImageFluid = frontmatter.featuredImage.childImageSharp.fluid;
+  const featuredImageFluid = frontmatter.featuredImage?.childImageSharp?.fluid;
 
   return (
     <PageLayout>
