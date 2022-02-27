@@ -2,6 +2,8 @@
 slug: "/blog/it-makes-me-regret-already"
 date: "2022-02-21"
 title: "It makes me regret already!!"
+tags: ["essay", "movie"]
+excerpt: "이럴수가, 이렇게 한글이 된다니. 이미테이션 게임."
 ---
 
 ## 이미테이션 게임을 보고
