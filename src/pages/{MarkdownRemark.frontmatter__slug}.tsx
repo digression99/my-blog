@@ -1,6 +1,7 @@
 import React from "react";
 import PageLayout from "../components/PageLayout";
 import { graphql, PageProps } from "gatsby";
+import Markdown from "../components/Markdown";
 import Image from "gatsby-image";
 
 interface DataProps {
@@ -18,7 +19,6 @@ interface DataProps {
 const Template = ({ data }: PageProps<DataProps>) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  console.log("template data : ", data);
 
   const featuredImageFluid = frontmatter.featuredImage.childImageSharp.fluid;
 
@@ -27,8 +27,8 @@ const Template = ({ data }: PageProps<DataProps>) => {
       <Image fluid={featuredImageFluid} />
 
       <h3>{frontmatter.title}</h3>
-      <h4>{frontmatter.date}</h4>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <span>{frontmatter.date}</span>
+      <Markdown html={html} />
     </PageLayout>
   );
 };
