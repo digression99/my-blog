@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import PageLayout from "../components/PageLayout";
-import Page from "../components/Page";
+import CenterPage from "../components/CenterPage";
 
 const Blog = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <PageLayout>
-      <Page>
+      <CenterPage>
         {posts
           .filter((post) => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
@@ -25,7 +25,7 @@ const Blog = ({ data }) => {
               </div>
             );
           })}
-      </Page>
+      </CenterPage>
     </PageLayout>
   );
 };

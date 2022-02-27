@@ -2,11 +2,12 @@ import * as React from "react";
 import { css } from "@emotion/react";
 import PageLayout from "../components/PageLayout";
 import Page from "../components/Page";
+import CenterPage from "../components/CenterPage";
 
 const About = () => {
   return (
     <PageLayout>
-      <Page>
+      <CenterPage>
         <h3>My name is Daniel Kim.</h3>
 
         <p>I live in South Korea.</p>
@@ -115,8 +116,8 @@ const About = () => {
         <h4>Personal Life</h4>
         <div>I do crossfit, olympic weightlifting after work.</div>
         <div>I love to make my own meals.</div>
-        <div>I love to sing or play the piano, not both.</div>
-      </Page>
+        <div>I love to sing and play the piano, not both.</div>
+      </CenterPage>
     </PageLayout>
   );
 };

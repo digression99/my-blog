@@ -77,7 +77,6 @@ const Main = styled.main`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 80px;
   padding: 5%;
 
   height: calc(100vh - 80px);

@@ -2,20 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import GlobalStyles from "../styles/GlobalStyles";
 import { Global } from "@emotion/react";
-
-const Navigation = () => {
-  return (
-    <NavigationWrapper>
-      <h5>Daniel Kim</h5>
-
-      <NavItemList>
-        <li>Heading1</li>
-        <li>Heading2</li>
-        <li>Heading3</li>
-      </NavItemList>
-    </NavigationWrapper>
-  );
-};
+import Navigation from "./Navigation";
 
 function PageLayout({ children }) {
   return (
@@ -24,7 +11,6 @@ function PageLayout({ children }) {
       {children}
 
       <Global styles={GlobalStyles} />
-
       <Footer>This is footer</Footer>
     </PageWrapper>
   );
@@ -32,34 +18,8 @@ function PageLayout({ children }) {
 
 export default PageLayout;
 
-const PageWrapper = styled.div``;
-
-const NavigationWrapper = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  height: 80px;
-  padding: 0 5%;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-  z-index: 1;
-`;
-
-const NavItemList = styled.ul`
-  list-style: none;
-  display: flex;
-
-  > * + * {
-    margin-left: 48px;
-  }
+const PageWrapper = styled.div`
+  margin-top: 80px;
 `;
 
 const Footer = styled.footer`
