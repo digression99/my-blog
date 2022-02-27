@@ -1,5 +1,4 @@
 import React from "react";
-import "normalize.css";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/react";
 import Navigation from "./Navigation";
@@ -37,6 +36,6 @@ const Wrapper = styled.div`
 
 const Container = styled.main`
   min-width: 320px;
-  max-width: 768px;
+  // max-width: 768px;
   width: 100%;
 `;

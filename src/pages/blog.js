@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link, graphql } from "gatsby";
 import PageLayout from "../components/PageLayout";
 import Page from "../components/Page";
+import { PostListQuery } from "../queries";
 
 const Blog = ({ data }) => {
   console.log("blog data :", data);
@@ -33,8 +34,8 @@ const Blog = ({ data }) => {
 
 export default Blog;
 
-export const pageQuery = graphql`
-  query BlogQuery {
+export const query = graphql`
+  query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -44,6 +45,8 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             slug
+            tags
+            excerpt
           }
         }
       }
