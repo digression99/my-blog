@@ -5,6 +5,9 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-emotion",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -12,9 +15,26 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/markdown-images`,
+      },
+    },
+
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 768,
+            },
+          },
+        ],
+      },
+    },
   ],
 };

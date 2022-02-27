@@ -1,15 +1,33 @@
 import React from "react";
 import PageLayout from "../components/PageLayout";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
+import Image from "gatsby-image";
 
-const Template = ({ data }) => {
+interface DataProps {
+  markdownRemark: {
+    html: string;
+    frontmatter: {
+      date: string;
+      slug: string;
+      title: string;
+      featuredImage: any;
+    };
+  };
+}
+
+const Template = ({ data }: PageProps<DataProps>) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+  console.log("template data : ", data);
+
+  const featuredImageFluid = frontmatter.featuredImage.childImageSharp.fluid;
 
   return (
     <PageLayout>
-      <h1> {frontmatter.title} </h1>
-      <h2> {frontmatter.date} </h2>
+      <Image fluid={featuredImageFluid} />
+
+      <h3>{frontmatter.title}</h3>
+      <h4>{frontmatter.date}</h4>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </PageLayout>
   );
@@ -25,6 +43,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 768) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

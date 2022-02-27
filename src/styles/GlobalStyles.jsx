@@ -1,11 +1,9 @@
 import React from "react";
-import normalizeCss from "normalize.css";
+import "normalize.css";
 import { css } from "@emotion/react";
 import breakpoints from "./breakpoints";
 
 const GlobalStyles = css`
-  ${normalizeCss}
-
   *,
   *::after,
   *::before {
